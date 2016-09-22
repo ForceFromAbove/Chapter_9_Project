@@ -1,4 +1,6 @@
-public class Emergency {
+package Info_911;
+
+public class nine_one_one {
     private String Name;
     private String Address;
     private String Phone_Number;

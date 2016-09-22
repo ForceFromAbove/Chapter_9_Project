@@ -1,11 +1,16 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Info_911.E911;
+import Info_911.W911;
+
 public class Chapter_9_Project {
 
     public static void main(String[] args) {            // Test driver
         Scanner user_Input = new Scanner(System.in);    // Used to get input from user
-        Emergency Emerg = new Emergency();
+        E911 Wireless = new E911();
+        W911 Enhanced = new W911();
+
         boolean hardcoded = true;
 
         try {
@@ -16,10 +21,10 @@ public class Chapter_9_Project {
         }
 
         if (hardcoded) {                                                                            // Data sent to Emergency class if hardcoded
-            Emerg.setName("Bill Murry");
+            Enhanced.setName("Bill Murry");
             Emerg.setAddress("666 The Street With No Name");
             Emerg.setPhone_Number("0118-999-881-999-119-725-3");
-            Emerg.setLatitude(0.00000000);
+            Wireless.setLatitude(0.00000000);
             Emerg.setLongitude(-89.2);
             Emerg.setNature("Serial Buttstabber");
             Emerg.setAccidental_Call(true);
