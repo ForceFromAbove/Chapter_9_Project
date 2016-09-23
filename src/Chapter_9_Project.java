@@ -13,6 +13,8 @@ public class Chapter_9_Project {
 
         boolean hardcoded = true;
 
+        //time
+
         try {
             System.out.println("Please enter true for hardcode, false for user interaction:");      // User decides to use hardcoded values or not
             hardcoded = user_Input.nextBoolean();
@@ -22,6 +24,7 @@ public class Chapter_9_Project {
 
         if (hardcoded) {                                                                            // Data sent to Emergency class if hardcoded
             Enhanced.setName("Bill Murry");
+            Enhanced.setTime("Lunchtime");
             Emerg.setAddress("666 The Street With No Name");
             Emerg.setPhone_Number("0118-999-881-999-119-725-3");
             Wireless.setLatitude(0.00000000);

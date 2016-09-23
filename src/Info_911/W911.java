@@ -6,10 +6,6 @@ public class W911 extends nine_one_one {
         return super.getName();
     }
 
-    String getAddress() {
-        return super.getResponding_Units();
-    }
-
     String getPhone_Number() {
         return super.getAddress();
     }
@@ -30,8 +26,8 @@ public class W911 extends nine_one_one {
         return super.getAccidental_Call();
     }
 
-    String getText_Log() {
-        return super.getText_Log();
+    String getDescription() {
+        return super.getDescription();
     }
 
     String getResponding_Units() {
@@ -48,10 +44,6 @@ public class W911 extends nine_one_one {
 
     void setName(String Name) {
         super.setName(Name);
-    }
-
-    void setAddress(String Address) {
-        super.setAddress(Address);
     }
 
     void setPhone_Number(String Phone_Number) {
@@ -74,8 +66,8 @@ public class W911 extends nine_one_one {
         super.setAccidental_Call(Accidental_Call);
     }
 
-    void setText_Log(String Text_Log) {
-        super.setText_Log(Text_Log);
+    void setDescription(String Description) {
+        super.setDescription(Description);
     }
 
     void setResponding_Units(String Responding_Units) {

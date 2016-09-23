@@ -2,36 +2,38 @@ package Info_911;
 
 public class nine_one_one {
     private String Name;
-    private String Address;
+    private String Time;
     private String Phone_Number;
-    private double Latitude;
-    private double Longitude;
     private String Nature;
     private boolean Accidental_Call;
-    private String Text_Log;
+    private String Description;
     private String Responding_Units;
-    private boolean Status;
+    private boolean Status; //list not bool
     private boolean Users_Fate;
 
     String getName() {
-        return this.Name;
+        return Name;
     }
 
-    String getAddress() {
-        return Address;
+    String getTime() {
+        return Time;
     }
+
+/*    String getAddress() {
+        return Address;
+    } */
 
     String getPhone_Number() {
         return Phone_Number;
     }
 
-    double getLatitude() {
+ /*   double getLatitude() {
         return Latitude;
     }
 
     double getLongitude() {
         return Longitude;
-    }
+    } */
 
     String getNature() {
         return Nature;
@@ -41,8 +43,8 @@ public class nine_one_one {
         return Accidental_Call;
     }
 
-    String getText_Log() {
-        return Text_Log;
+    String getDescription() {
+        return Description;
     }
 
     String getResponding_Units() {
@@ -61,21 +63,25 @@ public class nine_one_one {
         this.Name = Name;
     }
 
-    void setAddress(String Address) {
+/*    void setAddress(String Address) {
         this.Address = Address;
+    } */
+
+    void setTime (String Time) {
+        this.Time = Time;
     }
 
     void setPhone_Number(String Phone_Number) {
         this.Phone_Number = Phone_Number;
     }
 
-    void setLatitude(double Latitude) {
+/*    void setLatitude(double Latitude) {
         this.Latitude = Latitude;
     }
 
     void setLongitude(double Longitude) {
         this.Longitude = Longitude;
-    }
+    } */
 
     void setNature(String Nature) {
         this.Nature = Nature;
@@ -85,8 +91,8 @@ public class nine_one_one {
         this.Accidental_Call = Accidental_Call;
     }
 
-    void setText_Log(String Text_Log) {
-        this.Text_Log = Text_Log;
+    void setDescription(String Description) {
+        this.Description = Description;
     }
 
     void setResponding_Units(String Responding_Units) {

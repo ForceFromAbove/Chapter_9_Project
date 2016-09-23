@@ -1,9 +1,14 @@
 package Info_911;
 
 public class E911 extends nine_one_one {
+    private String Address;
 
     String getName() {
         return super.getName();
+    }
+
+    String getTime() {
+        return super.getTime();
     }
 
     String getAddress() {
@@ -11,15 +16,7 @@ public class E911 extends nine_one_one {
     }
 
     String getPhone_Number() {
-        return super.getAddress();
-    }
-
-    double getLatitude() {
-        return super.getLatitude();
-    }
-
-    double getLongitude() {
-        return super.getLongitude();
+        return Address;
     }
 
     String getNature() {
@@ -30,8 +27,8 @@ public class E911 extends nine_one_one {
         return super.getAccidental_Call();
     }
 
-    String getText_Log() {
-        return super.getText_Log();
+    String getDescription() {
+        return super.getDescription();
     }
 
     String getResponding_Units() {
@@ -50,20 +47,16 @@ public class E911 extends nine_one_one {
         super.setName(Name);
     }
 
+    void setTime (String Time) {
+        super.setTime(Time);
+    }
+
     void setAddress(String Address) {
-        super.setAddress(Address);
+        this.Address = Address;
     }
 
     void setPhone_Number(String Phone_Number) {
         super.setPhone_Number(Phone_Number);
-    }
-
-    void setLatitude(double Latitude) {
-        super.setLatitude(Latitude);
-    }
-
-    void setLongitude(double Longitude) {
-        super.setLongitude(Longitude);
     }
 
     void setNature(String Nature) {
@@ -74,8 +67,8 @@ public class E911 extends nine_one_one {
         super.setAccidental_Call(Accidental_Call);
     }
 
-    void setText_Log(String Text_Log) {
-        super.setText_Log(Text_Log);
+    void setDescription(String Description) {
+        super.setDescription(Description);
     }
 
     void setResponding_Units(String Responding_Units) {
