@@ -3,47 +3,47 @@ package Info_911;
 public class E911 extends nine_one_one {
 
     String getName() {
-        return this.Name;
+        return super.getName();
     }
 
     String getAddress() {
-        return Address;
+        return super.getResponding_Units();
     }
 
     String getPhone_Number() {
-        return Phone_Number;
+        return super.getAddress();
     }
 
     double getLatitude() {
-        return Latitude;
+        return super.getLatitude();
     }
 
     double getLongitude() {
-        return Longitude;
+        return super.getLongitude();
     }
 
     String getNature() {
-        return Nature;
+        return super.getNature();
     }
 
     boolean getAccidental_Call() {
-        return Accidental_Call;
+        return super.getAccidental_Call();
     }
 
     String getText_Log() {
-        return Text_Log;
+        return super.getText_Log();
     }
 
     String getResponding_Units() {
-        return Responding_Units;
+        return super.getResponding_Units();
     }
 
     boolean getStatus() {
-        return Status;
+        return super.getStatus();
     }
 
     boolean getUsers_Fate() {
-        return Users_Fate;
+        return super.getUsers_Fate();
     }
 
     void setName(String Name) {
@@ -51,43 +51,43 @@ public class E911 extends nine_one_one {
     }
 
     void setAddress(String Address) {
-        this.Address = Address;
+        super.setAddress(Address);
     }
 
     void setPhone_Number(String Phone_Number) {
-        this.Phone_Number = Phone_Number;
+        super.setPhone_Number(Phone_Number);
     }
 
     void setLatitude(double Latitude) {
-        this.Latitude = Latitude;
+        super.setLatitude(Latitude);
     }
 
     void setLongitude(double Longitude) {
-        this.Longitude = Longitude;
+        super.setLongitude(Longitude);
     }
 
     void setNature(String Nature) {
-        this.Nature = Nature;
+        super.setNature(Nature);
     }
 
     void setAccidental_Call(boolean Accidental_Call) {
-        this.Accidental_Call = Accidental_Call;
+        super.setAccidental_Call(Accidental_Call);
     }
 
     void setText_Log(String Text_Log) {
-        this.Text_Log = Text_Log;
+        super.setText_Log(Text_Log);
     }
 
     void setResponding_Units(String Responding_Units) {
-        this.Responding_Units = Responding_Units;
+        super.setResponding_Units(Responding_Units);
     }
 
     void setStatus(boolean Status) {
-        this.Status = Status;
+        super.setStatus(Status);
     }
 
     void setUsers_Fate(boolean Users_Fate) {
-        this.Users_Fate = Users_Fate;
+        super.setUsers_Fate(Users_Fate);
     }
 }
 
