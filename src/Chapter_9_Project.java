@@ -33,7 +33,7 @@ public class Chapter_9_Project {
             Emerg.setPhone_Number("0118-999-881-999-119-725-3");
             Wireless.setLatitude(0.00000000);
             Wireless.setLongitude(-89.2);
-            Emerg.setNature("Neighbor keeps playing katey perry!");
+            Emerg.setNature("The ending to LOST keeps me up at night");
             Emerg.setAccidental_Call(true);
             Emerg.setResponding_Units("None, they can go mad for all I care! -.-");
             Emerg.setStatus("I hate prank calls, they keep me away from serious business! *eats doughnut*");
@@ -47,7 +47,7 @@ public class Chapter_9_Project {
             System.out.printf("Nature of call: %s%n", Emerg.getNature());
             System.out.printf("Accidental Call: %b%n", Emerg.getAccidental_Call());
             System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());
-            System.out.printf("Status of Emergency: %b%n", Emerg.getStatus());
+            System.out.printf("Status of Emergency: %s%n", Emerg.getStatus());
 
         } else {
 
