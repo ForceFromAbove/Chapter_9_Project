@@ -15,7 +15,7 @@ public class E911 extends nine_one_one {
         return super.getResponding_Units();
     }
 
-    String getPhone_Number() {
+    public String getPhone_Number() {
         return Address;
     }
 
@@ -35,12 +35,8 @@ public class E911 extends nine_one_one {
         return super.getResponding_Units();
     }
 
-    boolean getStatus() {
+    String getStatus() {
         return super.getStatus();
-    }
-
-    boolean getUsers_Fate() {
-        return super.getUsers_Fate();
     }
 
     void setName(String Name) {
@@ -51,7 +47,7 @@ public class E911 extends nine_one_one {
         super.setTime(Time);
     }
 
-    void setAddress(String Address) {
+    public void setAddress(String Address) {
         this.Address = Address;
     }
 
@@ -75,12 +71,8 @@ public class E911 extends nine_one_one {
         super.setResponding_Units(Responding_Units);
     }
 
-    void setStatus(boolean Status) {
+    void setStatus(String Status) {
         super.setStatus(Status);
-    }
-
-    void setUsers_Fate(boolean Users_Fate) {
-        super.setUsers_Fate(Users_Fate);
     }
 }
 

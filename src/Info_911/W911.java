@@ -1,21 +1,25 @@
 package Info_911;
 
 public class W911 extends nine_one_one {
+    private Double Latitude;
+    private Double Longitude;
+
+    // reverse geo code & % of reliability <hardcode>
 
     String getName() {
         return super.getName();
     }
 
     String getPhone_Number() {
-        return super.getAddress();
+        return super.getPhone_Number();
     }
 
-    double getLatitude() {
-        return super.getLatitude();
+    public double getLatitude() {
+        return Latitude;
     }
 
-    double getLongitude() {
-        return super.getLongitude();
+    public double getLongitude() {
+        return Longitude;
     }
 
     String getNature() {
@@ -34,12 +38,8 @@ public class W911 extends nine_one_one {
         return super.getResponding_Units();
     }
 
-    boolean getStatus() {
+    String getStatus() {
         return super.getStatus();
-    }
-
-    boolean getUsers_Fate() {
-        return super.getUsers_Fate();
     }
 
     void setName(String Name) {
@@ -50,12 +50,12 @@ public class W911 extends nine_one_one {
         super.setPhone_Number(Phone_Number);
     }
 
-    void setLatitude(double Latitude) {
-        super.setLatitude(Latitude);
+    public void setLatitude(double Latitude) {
+        this.Latitude = Latitude;
     }
 
-    void setLongitude(double Longitude) {
-        super.setLongitude(Longitude);
+    public void setLongitude(double Longitude) {
+        this.Longitude = Longitude;
     }
 
     void setNature(String Nature) {
@@ -74,12 +74,8 @@ public class W911 extends nine_one_one {
         super.setResponding_Units(Responding_Units);
     }
 
-    void setStatus(boolean Status) {
+    void setStatus(String Status) {
         super.setStatus(Status);
-    }
-
-    void setUsers_Fate(boolean Users_Fate) {
-        super.setUsers_Fate(Users_Fate);
     }
 }
 
