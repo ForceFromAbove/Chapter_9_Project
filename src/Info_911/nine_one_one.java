@@ -10,67 +10,67 @@ public class nine_one_one {
     private String Responding_Units; //done
     private String Status; //list not bool, so array <different>
 
-    String getName() {
+    public String getName() {
         return Name;
     }
 
-    String getTime() {
+    public String getTime() {
         return Time;
     }
 
-    String getPhone_Number() {
+    public String getPhone_Number() {
         return Phone_Number;
     }
 
-    String getNature() {
+    public String getNature() {
         return Nature;
     }
 
-    boolean getAccidental_Call() {
+    public boolean getAccidental_Call() {
         return Accidental_Call;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return Description;
     }
 
-    String getResponding_Units() {
+    public String getResponding_Units() {
         return Responding_Units;
     }
 
-    String getStatus() {
+    public String getStatus() {
         return Status;
     }
 
-    void setName(String Name) {
+    public void setName(String Name) {
         this.Name = Name;
     }
 
-    void setTime (String Time) {
+    public void setTime (String Time) {
         this.Time = Time;
     }
 
-    void setPhone_Number(String Phone_Number) {
+    public void setPhone_Number(String Phone_Number) {
         this.Phone_Number = Phone_Number;
     }
 
-    void setNature(String Nature) {
+    public void setNature(String Nature) {
         this.Nature = Nature;
     }
 
-    void setAccidental_Call(boolean Accidental_Call) {
+    public void setAccidental_Call(boolean Accidental_Call) {
         this.Accidental_Call = Accidental_Call;
     }
 
-    void setDescription(String Description) {
+    public void setDescription(String Description) {
         this.Description = Description;
     }
 
-    void setResponding_Units(String Responding_Units) {
+    public void setResponding_Units(String Responding_Units) {
         this.Responding_Units = Responding_Units;
     }
 
-    void setStatus(String Status) {
+    public void setStatus(String Status) {
         this.Status = Status;
     }
 }

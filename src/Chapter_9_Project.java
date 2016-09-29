@@ -31,14 +31,12 @@ public class Chapter_9_Project {
             Emerg.setTime("Lunchtime");
             Enhanced.setAddress("666 The Street With No Name");
             Emerg.setPhone_Number("0118-999-881-999-119-725-3");
-          //  Emerg.setCell_Phone(false);
             Wireless.setLatitude(0.00000000);
             Wireless.setLongitude(-89.2);
             Emerg.setNature("Neighbor keeps playing katey perry!");
             Emerg.setAccidental_Call(true);
             Emerg.setResponding_Units("None, they can go mad for all I care! -.-");
-            Emerg.setStatus(false);
-            Emerg.setText_Log("I hate prank calls, they keep me away from serious business! *eats doughnut*");
+            Emerg.setStatus("I hate prank calls, they keep me away from serious business! *eats doughnut*");
 
             System.out.printf("Name: %s%n", Emerg.getName());                                       // Prints hardcoded data from Emergency class
             System.out.printf("Address: %s%n", Enhanced.getAddress());
@@ -49,15 +47,14 @@ public class Chapter_9_Project {
             System.out.printf("Nature of call: %s%n", Emerg.getNature());
             System.out.printf("Accidental Call: %b%n", Emerg.getAccidental_Call());
             System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());
-            System.out.printf("Status of emergency still ongoing: %b%n", Emerg.getStatus());
-            System.out.printf("Text Log of operator: %s%n", Emerg.getText_Log());
+            System.out.printf("Status of Emergency: %b%n", Emerg.getStatus());
 
         } else {
 
             try {
-                System.out.printf("This is 911, Alright are you calling from cellphone?%n", Emerg.getCell_Phone());   // User inputs cell phone or not
-                Cell_Phone = Emerg.setCell_Phone(user_Input.nextLine());
-                System.out.printf("Cell Phone: %b%n", Emerg.getCell_Phone());               // Phone Number stored
+                System.out.printf("This is 911, Alright are you calling from cellphone?%n");   // User inputs cell phone or not
+                Cell_Phone = user_Input.nextBoolean();
+                System.out.printf("Cell Phone: %b%n", Cell_Phone);               // Phone Number stored
             } catch (InputMismatchException e) {
                 System.out.println("Can you please repeat that, are you on a cell phone?");   // Error message
                 System.exit(1);
@@ -67,8 +64,8 @@ public class Chapter_9_Project {
                 try {
                     System.out.println("What is the address of the emergency?");   // User inputs Address
                     user_Input.nextLine();                                                      // Java needs something to absorb /n
-                    Emerg.setAddress(user_Input.nextLine());
-                    System.out.printf("Address: %s%n", Emerg.getAddress());                     // Address stored
+                    Enhanced.setAddress(user_Input.nextLine());
+                    System.out.printf("Address: %s%n", Enhanced.getAddress());                     // Address stored
                 } catch (InputMismatchException e) {
                     System.out.println("Please repeat that, I asked where you?");               // Error message
                     System.exit(2);
@@ -116,9 +113,9 @@ public class Chapter_9_Project {
             if (Cell_Phone) {
                 try {
                     System.out.println("*The computer cursor blinks and has a simple command input line* Input \"Caller's Latitude (0-90 degrees):\"");   // User inputs Latitude
-                    Emerg.setLatitude(user_Input.nextDouble());
-                    System.out.printf("Latitude: %f%n", Emerg.getLatitude());                       // Latitude stored
-                    if (Emerg.getLatitude() < -90 || Emerg.getLatitude() > 90) {                      // Is Latitude valid?
+                    Wireless.setLatitude(user_Input.nextDouble());
+                    System.out.printf("Latitude: %f%n", Wireless.getLatitude());                       // Latitude stored
+                    if (Wireless.getLatitude() < -90 || Wireless.getLatitude() > 90) {                      // Is Latitude valid?
                         throw new InputMismatchException();                                         // If not valid, throw error
                     }
                 } catch (InputMismatchException e) {
@@ -128,9 +125,9 @@ public class Chapter_9_Project {
 
                 try {
                     System.out.println("Input \"Caller's Longitude (0-90 degrees):\"");         // User inputs Longitude
-                    Emerg.setLongitude(user_Input.nextDouble());
-                    System.out.printf("Longitude: %f%n", Emerg.getLongitude());                 // Longitude stored
-                    if (Emerg.getLongitude() < -180 || Emerg.getLongitude() > 180) {            // Is Longitude valid?
+                    Wireless.setLongitude(user_Input.nextDouble());
+                    System.out.printf("Longitude: %f%n", Wireless.getLongitude());                 // Longitude stored
+                    if (Wireless.getLongitude() < -180 || Wireless.getLongitude() > 180) {            // Is Longitude valid?
                         throw new InputMismatchException();                                     // If not valid, throw error
                     }
                 } catch (InputMismatchException e) {
@@ -139,46 +136,50 @@ public class Chapter_9_Project {
                 }
             } else {
 
-            try {
-                System.out.println("Input \"Was the Caller's call accidental in nature (true/false)?:\"");   // User inputs Nature of emergency
-                Emerg.setAccidental_Call(user_Input.nextBoolean());
-                System.out.printf("Accidental Call: %b%n", Emerg.getAccidental_Call());     // Accidental call stored
-            } catch (InputMismatchException e) {
-                System.out.println("ERROR!!! Invalid input data type!");                    // Error message
-                System.exit(9);
-            }
+                try {
+                    System.out.println("Input \"Was the Caller's call accidental in nature (true/false)?:\"");   // User inputs Nature of emergency
+                    Emerg.setAccidental_Call(user_Input.nextBoolean());
+                    System.out.printf("Accidental Call: %b%n", Emerg.getAccidental_Call());     // Accidental call stored
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                    System.exit(9);
+                }
 
-            try {
-                System.out.println("Input \"Caller's Status currently Active? (true/false):\"");   // User inputs status of emergency
-                Emerg.setStatus(user_Input.nextBoolean());
-                System.out.printf("Responding Units: %s%n", Emerg.getStatus());             // Status stored
-            } catch (InputMismatchException e) {
-                System.out.println("ERROR!!! Invalid input data type!");                    // Error message
-                System.exit(10);
-            }
+                try {
+                    System.out.println("Input \"Caller's Status?:\"");   // User inputs status of emergency
+                    Emerg.setStatus(user_Input.nextLine());
+                    System.out.printf("Responding Units: %s%n", Emerg.getStatus());             // Status stored
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                    System.exit(10);
+                }
 
-            try {
-                System.out.println("Input \"Responding units to Caller's location?:\"");    // User inputs units responding to call
-                user_Input.nextLine();                                                      // Java needs something to absorb /n
-                Emerg.setResponding_Units(user_Input.nextLine());
-                System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());   // Units responding stored
-            } catch (InputMismatchException e) {
-                System.out.println("ERROR!!! Invalid input data type!");                    // Error message
-                System.exit(11);
-            }
-
-            try {
-                System.out.println("Input \"Text_Log of Caller's interaction and emergency status:\"");   // User inputs text log
-                Emerg.setText_Log(user_Input.nextLine());
-                System.out.printf("Text Log of operator: %s%n", Emerg.getText_Log());       // Text Log stored
-            } catch (InputMismatchException e) {
-                System.out.println("ERROR!!! Invalid input data type!");                    // Error message
-                System.exit(12);
+                try {
+                    System.out.println("Input \"Responding units to Caller's location?:\"");    // User inputs units responding to call
+                    user_Input.nextLine();                                                      // Java needs something to absorb /n
+                    Emerg.setResponding_Units(user_Input.nextLine());
+                    System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());   // Units responding stored
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                    System.exit(11);
+                }
+/*
+                try {
+                    System.out.println("Input \"Text_Log of Caller's interaction and emergency status:\"");   // User inputs text log
+                    Emerg.setText_Log(user_Input.nextLine());
+                    System.out.printf("Text Log of operator: %s%n", Emerg.getText_Log());       // Text Log stored
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                    System.exit(12);
+*/
+                }
             }
         }
     }
-}
+//}
 
 /*
  * Created by aaronewing on 9/8/2016.
+ * Notes:
+ * when you extend it EVERYTHING that is public or protected is auto in there
  */
