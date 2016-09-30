@@ -79,7 +79,8 @@ public class Chapter_9_Project {
 
             try {
                 System.out.println("What is the nature of your emergency?");                // User inputs nature of emergency
-                user_Input.nextLine();
+             //   user_Input.nextLine();
+              //  user_Input.nextLine();
                 Emerg.setNature(user_Input.nextLine());
                 System.out.printf("Nature of call: %s%n", Emerg.getNature());               // Nature of emergency stored
             } catch (InputMismatchException e) {
@@ -118,7 +119,7 @@ public class Chapter_9_Project {
 
             if (Emerg.getcell_Phone()) {
                 try {
-                    System.out.println("*The computer cursor blinks and has a simple command input line* Input \"Caller's Latitude (-90 to 90 degrees):\"");   // User inputs Latitude
+                    System.out.println("Input \"Caller's Latitude(-90 to 90 degrees):\"");   // User inputs Latitude
                     Wireless.setLatitude(user_Input.nextDouble());
                     System.out.printf("Latitude: %f%n", Wireless.getLatitude());                       // Latitude stored
                     if (Wireless.getLatitude() < -90 || Wireless.getLatitude() > 90) {                      // Is Latitude valid?
@@ -130,7 +131,7 @@ public class Chapter_9_Project {
                 }
 
                 try {
-                    System.out.println("Input \"Caller's Longitude (180 to 180 degrees):\"");         // User inputs Longitude
+                    System.out.println("Input \"Caller's Longitude (-180 to 180 degrees):\"");         // User inputs Longitude
                     Wireless.setLongitude(user_Input.nextDouble());
                     System.out.printf("Longitude: %f%n", Wireless.getLongitude());                 // Longitude stored
                     if (Wireless.getLongitude() < -180 || Wireless.getLongitude() > 180) {            // Is Longitude valid?
@@ -140,7 +141,7 @@ public class Chapter_9_Project {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(8);
                 }
-            } else {
+            } //else {
 
                 try {
                     System.out.println("Input \"Was the Caller's call accidental in nature (true/false)?:\"");   // User inputs Nature of emergency
@@ -153,6 +154,7 @@ public class Chapter_9_Project {
 
                 try {
                     System.out.println("Input \"Caller's Status?:\"");   // User inputs status of emergency
+                    user_Input.nextLine();
                     Emerg.setStatus(user_Input.nextLine());
                     System.out.printf("Responding Units: %s%n", Emerg.getStatus());             // Status stored
                 } catch (InputMismatchException e) {
@@ -175,7 +177,7 @@ public class Chapter_9_Project {
                 }
             }
         }
-    }
+   // }
 //}
 
 /*
