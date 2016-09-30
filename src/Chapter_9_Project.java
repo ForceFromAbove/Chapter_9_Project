@@ -14,7 +14,8 @@ public class Chapter_9_Project {
         nine_one_one Emerg = new nine_one_one();
 
         boolean hardcoded = true;
-        boolean Cell_Phone = false;
+        boolean cell_Phone;// = true;
+        boolean Cell_Phone2;// = true;
 
         //time
         // list is array
@@ -38,10 +39,12 @@ public class Chapter_9_Project {
             Emerg.setResponding_Units("None, they can go mad for all I care! -.-");
             Emerg.setStatus("I hate prank calls, they keep me away from serious business! *eats doughnut*");
 
+           // cell_Phone = false;
+
             System.out.printf("Name: %s%n", Emerg.getName());                                       // Prints hardcoded data from Emergency class
             System.out.printf("Address: %s%n", Enhanced.getAddress());
             System.out.printf("Phone Number: %s%n", Emerg.getPhone_Number());
-            System.out.printf("Cell Phone: %b%n", Cell_Phone);
+            System.out.printf("Cell Phone: %b%n", Emerg.getcell_Phone());
             System.out.printf("Latitude: %f%n", Wireless.getLatitude());
             System.out.printf("Longitude: %f (coldest day on Earth!)%n", Wireless.getLongitude());
             System.out.printf("Nature of call: %s%n", Emerg.getNature());
@@ -52,15 +55,17 @@ public class Chapter_9_Project {
         } else {
 
             try {
-                System.out.printf("This is 911, Alright are you calling from cellphone?%n");   // User inputs cell phone or not
-                Cell_Phone = user_Input.nextBoolean();
-                System.out.printf("Cell Phone: %b%n", Cell_Phone);               // Phone Number stored
+                System.out.printf("This is 911, Alright are you calling from cellphone? (true/false)%n");   // User inputs cell phone or not
+              //  cell_Phone = user_Input.nextBoolean();
+                Emerg.setCell_Phone(user_Input.nextBoolean());
+               // Cell_Phone2 = Cell_Phone;
+                System.out.printf("Cell Phone: %b%n", Emerg.getcell_Phone());               // Phone Number stored
             } catch (InputMismatchException e) {
                 System.out.println("Can you please repeat that, are you on a cell phone?");   // Error message
                 System.exit(1);
             }
 
-            if (Cell_Phone) {
+            if (Emerg.getcell_Phone()) {
                 try {
                     System.out.println("What is the address of the emergency?");   // User inputs Address
                     user_Input.nextLine();                                                      // Java needs something to absorb /n
@@ -74,6 +79,7 @@ public class Chapter_9_Project {
 
             try {
                 System.out.println("What is the nature of your emergency?");                // User inputs nature of emergency
+                user_Input.nextLine();
                 Emerg.setNature(user_Input.nextLine());
                 System.out.printf("Nature of call: %s%n", Emerg.getNature());               // Nature of emergency stored
             } catch (InputMismatchException e) {
@@ -110,9 +116,9 @@ public class Chapter_9_Project {
                 System.exit(6);
             }
 
-            if (Cell_Phone) {
+            if (Emerg.getcell_Phone()) {
                 try {
-                    System.out.println("*The computer cursor blinks and has a simple command input line* Input \"Caller's Latitude (0-90 degrees):\"");   // User inputs Latitude
+                    System.out.println("*The computer cursor blinks and has a simple command input line* Input \"Caller's Latitude (-90 to 90 degrees):\"");   // User inputs Latitude
                     Wireless.setLatitude(user_Input.nextDouble());
                     System.out.printf("Latitude: %f%n", Wireless.getLatitude());                       // Latitude stored
                     if (Wireless.getLatitude() < -90 || Wireless.getLatitude() > 90) {                      // Is Latitude valid?
@@ -124,7 +130,7 @@ public class Chapter_9_Project {
                 }
 
                 try {
-                    System.out.println("Input \"Caller's Longitude (0-90 degrees):\"");         // User inputs Longitude
+                    System.out.println("Input \"Caller's Longitude (180 to 180 degrees):\"");         // User inputs Longitude
                     Wireless.setLongitude(user_Input.nextDouble());
                     System.out.printf("Longitude: %f%n", Wireless.getLongitude());                 // Longitude stored
                     if (Wireless.getLongitude() < -180 || Wireless.getLongitude() > 180) {            // Is Longitude valid?
@@ -163,15 +169,9 @@ public class Chapter_9_Project {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(11);
                 }
-/*
-                try {
-                    System.out.println("Input \"Text_Log of Caller's interaction and emergency status:\"");   // User inputs text log
-                    Emerg.setText_Log(user_Input.nextLine());
-                    System.out.printf("Text Log of operator: %s%n", Emerg.getText_Log());       // Text Log stored
-                } catch (InputMismatchException e) {
-                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
-                    System.exit(12);
-*/
+
+                System.out.println("*The Computer screen goes blank and then says a simple message* Thank you for your input.");
+
                 }
             }
         }
@@ -182,4 +182,15 @@ public class Chapter_9_Project {
  * Created by aaronewing on 9/8/2016.
  * Notes:
  * when you extend it EVERYTHING that is public or protected is auto in there
+ *
+This is 911, Alright are you calling from cellphone? (true/false)
+false
+Cell Phone: false
+What is the nature of your emergency?
+Nature of call:
+Alright, help is on the way. What is your name?
+ *
+ *
+ *
+ *
  */

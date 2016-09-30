@@ -9,10 +9,20 @@ public class nine_one_one {
     private String Description; // done
     private String Responding_Units; //done
     private String Status; //list not bool, so array <different>
+    private boolean cell_Phone;
 
     public String getName() {
         return Name;
     }
+
+    public Boolean getcell_Phone() {
+        return cell_Phone;
+    }
+
+    public void setCell_Phone(boolean cell_Phone) {
+        this.cell_Phone = cell_Phone;
+    }
+
 
     public String getTime() {
         return Time;
