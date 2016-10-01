@@ -14,12 +14,6 @@ public class Chapter_9_Project {
         nine_one_one Emerg = new nine_one_one();
 
         boolean hardcoded = true;
-        boolean cell_Phone;// = true;
-        boolean Cell_Phone2;// = true;
-
-        //time
-        // list is array
-
         try {
             System.out.println("Please enter true for hardcode, false for user interaction:");      // User decides to use hardcoded values or not
             hardcoded = user_Input.nextBoolean();
@@ -36,7 +30,7 @@ public class Chapter_9_Project {
             Wireless.setLongitude(-89.2);
             Emerg.setNature("The ending to LOST keeps me up at night");
             Emerg.setAccidental_Call(true);
-            Emerg.setResponding_Units("None, they can go mad for all I care! -.-");
+       //     Emerg.setResponding_Units("None, they can go mad for all I care! -.-");
             Emerg.setStatus("I hate prank calls, they keep me away from serious business! *eats doughnut*");
 
            // cell_Phone = false;
@@ -49,7 +43,7 @@ public class Chapter_9_Project {
             System.out.printf("Longitude: %f (coldest day on Earth!)%n", Wireless.getLongitude());
             System.out.printf("Nature of call: %s%n", Emerg.getNature());
             System.out.printf("Accidental Call: %b%n", Emerg.getAccidental_Call());
-            System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());
+          //  System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());
             System.out.printf("Status of Emergency: %s%n", Emerg.getStatus());
 
         } else {
@@ -164,12 +158,22 @@ public class Chapter_9_Project {
 
                 try {
                     System.out.println("Input \"Responding units to Caller's location?:\"");    // User inputs units responding to call
-                    user_Input.nextLine();                                                      // Java needs something to absorb /n
-                    Emerg.setResponding_Units(user_Input.nextLine());
-                    System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());   // Units responding stored
+                 //   user_Input.nextLine();                                                      // Java needs something to absorb /n
+                 //   Emerg.addDescription(user_Input.nextLine());
+                    while (!user_Input.nextLine().equals("exit")) {
+                     //   user_Input.nextLine();                                                      // Java needs something to absorb /n
+                        Emerg.addDescription(user_Input.nextLine());
+                    }
+                  //  Emerg.setResponding_Units = user_Input.nextLine();//[(user_Input.nextLine())];
+                  //  Emerg.setResponding_Units(user_Input.nextLine());
+                 //   System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());   // Units responding stored
                 } catch (InputMismatchException e) {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(11);
+                }
+
+                for (int i = 0; i < Emerg.getDes_Count(); i++) {
+                    System.out.printf("Responding Units: %s%n", Emerg.getDescription()[i]);   // Units responding stored
                 }
 
                 System.out.println("*The Computer screen goes blank and then says a simple message* Thank you for your input.");

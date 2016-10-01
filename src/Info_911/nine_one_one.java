@@ -1,15 +1,20 @@
 package Info_911;
 
+import com.sun.org.apache.regexp.internal.RE;
+
 public class nine_one_one {
     private String Name; //done
     private String Time; //<new>
     private String Phone_Number; //does period work? yeah it should. Done
     private String Nature; // done
     private boolean Accidental_Call; // done
-    private String Description; // done
-    private String Responding_Units; //done
-    private String Status; //list not bool, so array <different>
+    private String Description[] = new String[20]; //<list>
+    private String Responding_Units[] = new String[20]; //<list>
+    private String Status; //list not bool, so array <different> can be bool
     private boolean cell_Phone;
+
+    private int des_Count = 0;
+    private int units_Count = -1;
 
     public String getName() {
         return Name;
@@ -40,13 +45,25 @@ public class nine_one_one {
         return Accidental_Call;
     }
 
-    public String getDescription() {
+ /*   public String getDescription() {
+        des_Count++;
+        return Description[des_Count];
+    } */
+
+    public String[] getDescription() { // returns entire array of strings
+    //    this.Description[0] = "none";
         return Description;
     }
 
-    public String getResponding_Units() {
-        return Responding_Units;
+    public int getDes_Count() {        // returns count
+        return des_Count;
     }
+
+   // public String getResponding_Units() {
+    //    j++;
+   //     return Responding_Units[j];
+
+   // }
 
     public String getStatus() {
         return Status;
@@ -72,12 +89,22 @@ public class nine_one_one {
         this.Accidental_Call = Accidental_Call;
     }
 
-    public void setDescription(String Description) {
+ /*   public void setDescription(String Description) {
         this.Description = Description;
+    } */
+
+/*    public void setDescription(String Description[]) {
+        this.Description[i] = Description;
+    } */
+
+    public void addDescription(String Description) {
+        this.Description[des_Count] = Description;
+        ++des_Count;
     }
 
-    public void setResponding_Units(String Responding_Units) {
-        this.Responding_Units = Responding_Units;
+    public void setResponding_Units(String Responding_Units[]) {
+  //      this.Responding_Units[j] = Responding_Units[j];
+     //   this.Responding_Units = Responding_Units.copyOf(Responding_Units, Responding_Units.length);
     }
 
     public void setStatus(String Status) {
