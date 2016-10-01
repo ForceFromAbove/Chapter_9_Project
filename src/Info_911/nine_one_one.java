@@ -8,13 +8,13 @@ public class nine_one_one {
     private String Phone_Number; //does period work? yeah it should. Done
     private String Nature; // done
     private boolean Accidental_Call; // done
-    private String Description[] = new String[20]; //<list>
-    private String Responding_Units[] = new String[20]; //<list>
+    private String Description[] = new String[100]; //<list>
+    private String Responding_Units[] = new String[100]; //<list>
     private String Status; //list not bool, so array <different> can be bool
     private boolean cell_Phone;
 
     private int des_Count = 0;
-    private int units_Count = -1;
+    private int units_Count = 0;
 
     public String getName() {
         return Name;
@@ -57,6 +57,15 @@ public class nine_one_one {
 
     public int getDes_Count() {        // returns count
         return des_Count;
+    }
+
+    public String[] getResponding_Units() { // returns entire array of strings
+        //    this.Description[0] = "none";
+        return Responding_Units;
+    }
+
+    public int getUnits_Count() {        // returns count
+        return units_Count;
     }
 
    // public String getResponding_Units() {

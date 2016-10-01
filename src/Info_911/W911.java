@@ -26,4 +26,8 @@ public class W911 extends nine_one_one {
 
 /**
  * Created by aaronewing on 9/22/2016.
+ *
+ * 5 accuracy
+ * geoloaction
+ *
  */

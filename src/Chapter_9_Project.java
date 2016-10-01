@@ -157,23 +157,22 @@ public class Chapter_9_Project {
                 }
 
                 try {
-                    System.out.println("Input \"Responding units to Caller's location?:\"");    // User inputs units responding to call
-                 //   user_Input.nextLine();                                                      // Java needs something to absorb /n
-                 //   Emerg.addDescription(user_Input.nextLine());
-                    while (!user_Input.nextLine().equals("exit")) {
-                     //   user_Input.nextLine();                                                      // Java needs something to absorb /n
-                        Emerg.addDescription(user_Input.nextLine());
+                    System.out.println("Input \"Responding units to Caller's location? (exit to stop):\"");    // User inputs units responding to call
+                    String x = user_Input.nextLine();
+                    while (!x.equals("exit")) {
+                        Emerg.addDescription(x);
+                        x = user_Input.nextLine();
                     }
-                  //  Emerg.setResponding_Units = user_Input.nextLine();//[(user_Input.nextLine())];
-                  //  Emerg.setResponding_Units(user_Input.nextLine());
-                 //   System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());   // Units responding stored
                 } catch (InputMismatchException e) {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(11);
                 }
-
-                for (int i = 0; i < Emerg.getDes_Count(); i++) {
-                    System.out.printf("Responding Units: %s%n", Emerg.getDescription()[i]);   // Units responding stored
+                if (Emerg.getDes_Count() == 0) {
+                    System.out.printf("No Responding Units (uh oh O.o)%n");
+                } else {
+                    for (int i = 0; i < Emerg.getDes_Count(); i++) {
+                        System.out.printf("Responding Units %d: %s%n", i, Emerg.getDescription()[i]);   // Units responding stored
+                    }
                 }
 
                 System.out.println("*The Computer screen goes blank and then says a simple message* Thank you for your input.");
