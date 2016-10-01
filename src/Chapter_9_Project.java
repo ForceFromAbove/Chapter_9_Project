@@ -25,25 +25,26 @@ public class Chapter_9_Project {
             Emerg.setName("Bill Murry");
             Emerg.setTime("Lunchtime");
             Enhanced.setAddress("666 The Street With No Name");
+            Wireless.setReliability(0);
+            Wireless.setReverse_geo_code("Your mama's house");
             Emerg.setPhone_Number("0118-999-881-999-119-725-3");
             Wireless.setLatitude(0.00000000);
             Wireless.setLongitude(-89.2);
             Emerg.setNature("The ending to LOST keeps me up at night");
             Emerg.setAccidental_Call(true);
-       //     Emerg.setResponding_Units("None, they can go mad for all I care! -.-");
             Emerg.setStatus("I hate prank calls, they keep me away from serious business! *eats doughnut*");
 
-           // cell_Phone = false;
-
             System.out.printf("Name: %s%n", Emerg.getName());                                       // Prints hardcoded data from Emergency class
+            System.out.printf("Time: %s%n", Emerg.getTime());
             System.out.printf("Address: %s%n", Enhanced.getAddress());
+            System.out.printf("Address Reliability: %s%%%n", Wireless.getReliability());
+            System.out.printf("Reverse geocode: %s%n", Wireless.getReverse_geo_code());
             System.out.printf("Phone Number: %s%n", Emerg.getPhone_Number());
             System.out.printf("Cell Phone: %b%n", Emerg.getcell_Phone());
             System.out.printf("Latitude: %f%n", Wireless.getLatitude());
             System.out.printf("Longitude: %f (coldest day on Earth!)%n", Wireless.getLongitude());
             System.out.printf("Nature of call: %s%n", Emerg.getNature());
             System.out.printf("Accidental Call: %b%n", Emerg.getAccidental_Call());
-          //  System.out.printf("Responding Units: %s%n", Emerg.getResponding_Units());
             System.out.printf("Status of Emergency: %s%n", Emerg.getStatus());
 
         } else {
@@ -70,11 +71,11 @@ public class Chapter_9_Project {
                     System.exit(2);
                 }
             }
-
+            else {
+                user_Input.nextLine();
+            }
+            System.out.println("What is the nature of your emergency?");                // User inputs nature of emergency
             try {
-                System.out.println("What is the nature of your emergency?");                // User inputs nature of emergency
-             //   user_Input.nextLine();
-              //  user_Input.nextLine();
                 Emerg.setNature(user_Input.nextLine());
                 System.out.printf("Nature of call: %s%n", Emerg.getNature());               // Nature of emergency stored
             } catch (InputMismatchException e) {
@@ -94,7 +95,7 @@ public class Chapter_9_Project {
             try {
                 System.out.printf("Alright %s, what is your phone number in case we lose contact?%n", Emerg.getName());   // User inputs phone number
                 Emerg.setPhone_Number(user_Input.nextLine());
-                System.out.printf("Phone Number: %s%n", Emerg.getPhone_Number());               // Phone Number stored
+                System.out.printf("Phone Number: %s%n%n", Emerg.getPhone_Number());               // Phone Number stored
             } catch (InputMismatchException e) {
                 System.out.println("Can you please repeat that, what is your phone number?");   // Error message
                 System.exit(5);
@@ -113,7 +114,7 @@ public class Chapter_9_Project {
 
             if (Emerg.getcell_Phone()) {
                 try {
-                    System.out.println("Input \"Caller's Latitude(-90 to 90 degrees):\"");   // User inputs Latitude
+                    System.out.println("Input \"Caller's Latitude(-90 to 90):\"");   // User inputs Latitude
                     Wireless.setLatitude(user_Input.nextDouble());
                     System.out.printf("Latitude: %f%n", Wireless.getLatitude());                       // Latitude stored
                     if (Wireless.getLatitude() < -90 || Wireless.getLatitude() > 90) {                      // Is Latitude valid?
@@ -125,7 +126,7 @@ public class Chapter_9_Project {
                 }
 
                 try {
-                    System.out.println("Input \"Caller's Longitude (-180 to 180 degrees):\"");         // User inputs Longitude
+                    System.out.println("Input \"Caller's Longitude (-180 to 180):\"");         // User inputs Longitude
                     Wireless.setLongitude(user_Input.nextDouble());
                     System.out.printf("Longitude: %f%n", Wireless.getLongitude());                 // Longitude stored
                     if (Wireless.getLongitude() < -180 || Wireless.getLongitude() > 180) {            // Is Longitude valid?
@@ -135,6 +136,28 @@ public class Chapter_9_Project {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(8);
                 }
+
+                try {
+                    System.out.printf("Input \"new reverse geocoding address\" (default value: %s)%n", Wireless.getReverse_geo_code());         // User inputs Longitude
+                  //  System.out.printf("default value: %s%n", Wireless.getReverse_geo_code());
+                    user_Input.nextLine();
+                    Wireless.setReverse_geo_code(user_Input.nextLine());
+                    System.out.printf("Reverse geocoding: %s%n", Wireless.getReverse_geo_code());                 // Longitude stored
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                    System.exit(8);
+                }
+
+                try {
+                    System.out.printf("Input \"new accuracy of reverse geocoding address\" (default value: %d)%n", Wireless.getReliability());         // User inputs Longitude
+                    //System.out.printf("default value: %d%n", Wireless.getReliability());
+                    Wireless.setReliability(user_Input.nextInt());
+                    System.out.printf("accuracy: %d%n", Wireless.getReliability());                 // Longitude stored
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                    System.exit(8);
+                }
+
             } //else {
 
                 try {
@@ -150,30 +173,49 @@ public class Chapter_9_Project {
                     System.out.println("Input \"Caller's Status?:\"");   // User inputs status of emergency
                     user_Input.nextLine();
                     Emerg.setStatus(user_Input.nextLine());
-                    System.out.printf("Responding Units: %s%n", Emerg.getStatus());             // Status stored
+                    System.out.printf("Caller's Status: %s%n", Emerg.getStatus());             // Status stored
                 } catch (InputMismatchException e) {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(10);
                 }
 
                 try {
-                    System.out.println("Input \"Responding units to Caller's location? (exit to stop):\"");    // User inputs units responding to call
-                    String x = user_Input.nextLine();
-                    while (!x.equals("exit")) {
-                        Emerg.addDescription(x);
-                        x = user_Input.nextLine();
+                    System.out.println("Input \"Description of call? (exit to stop):\"");    // User inputs description of call
+                    String des = user_Input.nextLine();
+                    while (!des.equals("exit")) {
+                        Emerg.addDescription(des);
+                        des = user_Input.nextLine();
                     }
                 } catch (InputMismatchException e) {
                     System.out.println("ERROR!!! Invalid input data type!");                    // Error message
                     System.exit(11);
                 }
                 if (Emerg.getDes_Count() == 0) {
-                    System.out.printf("No Responding Units (uh oh O.o)%n");
+                    System.out.printf("No Description? You're fired!%n");
                 } else {
-                    for (int i = 0; i < Emerg.getDes_Count(); i++) {
-                        System.out.printf("Responding Units %d: %s%n", i, Emerg.getDescription()[i]);   // Units responding stored
+                    for (int j = 0; j < Emerg.getDes_Count(); j++) {
+                        System.out.printf("Description %d: %s%n", j, Emerg.getDescription()[j]);   // Units responding stored
                     }
                 }
+
+            try {
+                System.out.println("Input \"Responding units to Caller's location? (exit to stop):\"");    // User inputs units responding to call
+                String uints = user_Input.nextLine();
+                while (!uints.equals("exit")) {
+                    Emerg.addResponding_Units(uints);
+                    uints = user_Input.nextLine();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR!!! Invalid input data type!");                    // Error message
+                System.exit(11);
+            }
+            if (Emerg.getUnits_Count() == 0) {
+                System.out.printf("No Responding Units (uh oh O.o)%n");
+            } else {
+                for (int i = 0; i < Emerg.getUnits_Count(); i++) {
+                    System.out.printf("Responding Units %d: %s%n", i, Emerg.getResponding_Units()[i]);   // Units responding stored
+                }
+            }
 
                 System.out.println("*The Computer screen goes blank and then says a simple message* Thank you for your input.");
 

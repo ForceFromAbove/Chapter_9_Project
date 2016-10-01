@@ -68,12 +68,6 @@ public class nine_one_one {
         return units_Count;
     }
 
-   // public String getResponding_Units() {
-    //    j++;
-   //     return Responding_Units[j];
-
-   // }
-
     public String getStatus() {
         return Status;
     }
@@ -111,9 +105,9 @@ public class nine_one_one {
         ++des_Count;
     }
 
-    public void setResponding_Units(String Responding_Units[]) {
-  //      this.Responding_Units[j] = Responding_Units[j];
-     //   this.Responding_Units = Responding_Units.copyOf(Responding_Units, Responding_Units.length);
+    public void addResponding_Units(String Responding_Units) {
+        this.Responding_Units[units_Count] = Responding_Units;
+        ++units_Count;
     }
 
     public void setStatus(String Status) {
